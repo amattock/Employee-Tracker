@@ -33,30 +33,6 @@ const mainMenu = async () => {
   ]);
 
   answer.menu();
-
-  //   switch (answer.menu) {
-  //     case "View all departments":
-  //       return viewDepartments();
-  //     case "View all roles":
-  //       return viewRoles();
-  //     case "View all employees":
-  //       return viewEmployees();
-  //     case "Add a department":
-  //       return addDepartment();
-  //     case "Add a role":
-  //       return addRole();
-  //     case "Add an employee":
-  //       return addEmployee();
-  //     case "Update an employee role":
-  //       return updateEmployeeRole();
-  //     case "Update employee manager":
-  //       return updateEmployeeManager();
-  //     case "View employees by manager":
-  //       return viewByManager();
-  //     case "Exit":
-  //       console.log("Bye!");
-  //       break;
-  //   }
 };
 
 function viewDepartments() {

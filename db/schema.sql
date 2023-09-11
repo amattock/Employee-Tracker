@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS company;
+DROP DATABASE IF EXISTS company_db;
 
-CREATE DATABASE company;
-USE company;
+CREATE DATABASE company_db;
+USE company_db;
 
 DROP TABLE IF EXISTS department;
 DROP TABLE IF EXISTS roles;
@@ -26,7 +26,7 @@ CREATE TABLE employee (
     last_name VARCHAR(30) NOT NULL,
     role_id INT NOT NULL,
     CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES roles(id) ON DELETE CASCADE,
-    -- Reference another employee that is manager of current employee
+    
     manager_id INT,
     CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
 );

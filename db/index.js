@@ -1,7 +1,5 @@
-// get connection
 const connection = require("./connection");
 
-// DB commands, ORM
 class db {
   constructor(connection) {
     this.connection = connection;
@@ -57,7 +55,6 @@ addADepartment(departmentName) {
   findAllManagers(employeeId) {
       return this.connection.promise().query("SELECT * FROM employee WHERE id != ?", [employeeId]);
   }
-//   not a left join? join on employee itself??
   findByManager(managerId) {
     return this.connection.promise().query(`SELECT employee.id, employee.manager_id, CONCAT(employee.first_name, ' ' , employee.last_name) AS name FROM employee LEFT JOIN roles on employee.role_id = roles.id WHERE manager_id = ?`, [managerId]);
   }
