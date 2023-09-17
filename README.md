@@ -8,6 +8,9 @@ This command line interface (CLI) application serves to store, create and delete
 # Installation
 The user will need to have the latest version of node.js downloaded to their computer, as well as install inquirer (npm i inquirer) in order to use this code. subsequesntly un "node index.js" to run application.
 
+# Demo Clip 
+https://drive.google.com/file/d/1QqyhMoLxTnfZvQPC8dLMWs97aDJNDpqC/view
+
 ![Alt text](<Screenshot 2023-09-17 165417-1.jpg>)
 
 # Credits
