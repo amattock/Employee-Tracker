@@ -1,5 +1,6 @@
 const connection = require("./connection");
 
+// db functions to return data to index.js
 class db {
   constructor(connection) {
     this.connection = connection;

@@ -1,11 +1,16 @@
+// Require inquirer to perfom actions in the command line
+// Require db connection
+// Require consol.table to display data as a table
 const inquirer = require("inquirer");
 const db = require("./db");
 require("console.table");
 
+//  exit used in below table
 const exit = () => {
   console.log("Bye!");
   process.exit(0);
 };
+// main menu of questions initially presented, refrenaces index.js in db.
 const mainMenu = async () => {
   const answer = await inquirer.prompt([
     {
@@ -34,28 +39,28 @@ const mainMenu = async () => {
 
   answer.menu();
 };
-
+// "viewDepartments" returns "findAllDepartments" in index.js"
 function viewDepartments() {
   db.findAllDepartments().then(([rows]) => {
     console.table(rows);
     return mainMenu();
   });
 }
-
+// "viewEmployees" returns "findAllEmployees" in index.js"
 function viewEmployees() {
   db.findAllEmployees().then(([rows]) => {
     console.table(rows);
     return mainMenu();
   });
 }
-
+// "viewRoles" returns "findAllRoles" in index.js"
 function viewRoles() {
   db.findAllRoles().then(([rows]) => {
     console.table(rows);
     return mainMenu();
   });
 }
-
+// validates whether entry has been created
 function validateInput(value) {
   if (value) {
     return true;
@@ -64,7 +69,7 @@ function validateInput(value) {
     return false;
   }
 }
-
+// utilizes inquirer to create db entry 
 const addDepartment = async () => {
   const answer = await inquirer.prompt([
     {
@@ -140,6 +145,7 @@ const addEmployee = async () => {
   const employeeChoices = rowsB.map(mapEmployeeChoices);
   console.log(employeeChoices);
 
+  // inquirer prompts to create new employee
   const managerChoices = [...employeeChoices, { name: "Null" }];
   console.log(managerChoices);
   const answer = await inquirer.prompt([
@@ -313,9 +319,7 @@ const deleteDepartment = async () => {
       choices: departmentChoices,
     },
   ]);
-  //   const [updatedDepartments] = await db.deleteADepartment(department);
-  //   console.table(updatedDepartments);
-  //   return mainMenu();
+
 
   db.deleteADepartment(department).then(() => {
     db.findAllDepartments().then(([rows]) => {

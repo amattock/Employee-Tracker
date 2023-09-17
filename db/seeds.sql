@@ -1,5 +1,6 @@
 USE company_db;
 
+--  departments according to example
 INSERT INTO department(id, name)
 VALUES
 (1, "Sales"),
@@ -7,6 +8,7 @@ VALUES
 (3, "Finance"),
 (4, "Legal");
 
+-- roles according to example
 INSERT INTO roles(id, title, salary, department_id)
 VALUES
 (1, "Sales Lead", 90000, 1),
@@ -18,6 +20,7 @@ VALUES
 (7, "Legal Team Lead", 180000, 4),
 (8, "Lawyer", 180000, 4);
 
+-- employees according to example
 INSERT INTO employee(id, first_name, last_name, role_id, manager_id)
 VALUES
 (1, "John", "Doe", 1, 1),
